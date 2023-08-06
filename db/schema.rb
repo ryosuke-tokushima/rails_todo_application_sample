@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_06_081400) do
+ActiveRecord::Schema.define(version: 2023_08_06_153139) do
 
   create_table "cards", force: :cascade do |t|
     t.string "title", limit: 255, null: false
@@ -18,7 +18,16 @@ ActiveRecord::Schema.define(version: 2023_08_06_081400) do
     t.integer "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "category_id"
+    t.boolean "is_faded"
+    t.index ["category_id"], name: "index_cards_on_category_id"
     t.index ["list_id"], name: "index_cards_on_list_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lists", force: :cascade do |t|
@@ -42,6 +51,7 @@ ActiveRecord::Schema.define(version: 2023_08_06_081400) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "categories"
   add_foreign_key "cards", "lists"
   add_foreign_key "lists", "users"
 end

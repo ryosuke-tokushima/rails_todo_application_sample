@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to:  "top#index"
 
   resources :lists, only: %i(new create edit update destroy) do
-    resources :card, except: %i(index)
+    resources :cards, except: %i(index) do
+      member do
+        patch :toggle_fade
+      end
+    end
   end
+
 end

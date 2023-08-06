@@ -1,3 +1,85 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.topPage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; // 上側に寄せる設定
+    height: 100vh;
+    padding-top: 50px; // トップからの少しの余白
+    background-color: #f4f4f4;
+  
+    .listWrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+      max-width: 1200px;
+  
+      .list {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        background-color: #fff;
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        border-radius: 3px;
+        
+        &_action {
+            .fa-pen, .fa-trash {
+              font-size: 18px;
+              color: #8c8c8c;
+            }
+        }
+        .fa-trash {
+            margin-right: 10px;
+        }
+
+        &:hover {
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+  
+        .list_header {
+          border-bottom: 1px solid #e0e0e0;
+          padding: 10px 20px;
+  
+          .list_header_title {
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .card {
+        margin-bottom: 10px;
+        padding: 10px;
+        &_title {
+          font-size: 17px;
+        }
+        &_detail {
+          display: none;
+          &.is-exist {
+            display: block;
+            color: #999;
+            & > i {
+              display: block;
+            }
+          }
+        }
+      }
+  }
+  
+.faded {
+  opacity: 0.5; // 色を薄くする
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.0rem;
+    padding: 0;
+    margin-bottom: 5px;
+  
+    &:hover {
+      color: #333;
+    }
+}
+  
