@@ -9,8 +9,8 @@
     "@rails/webpacker": "4.3.0",
     "bootstrap": "4.5.3",
     "jquery": "^3.7.0",
-    "node-sass": "^9.0.0",
     "popper.js": "^1.16.1",
+    "sass": "^1.64.2",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
