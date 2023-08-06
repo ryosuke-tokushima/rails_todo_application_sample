@@ -24,7 +24,7 @@ class CardsController < ApplicationController
   end
 
   def update
-    if @card.update
+    if @card.update(card_params)
       redirect_to :root
     else
       render :edit
@@ -36,10 +36,18 @@ class CardsController < ApplicationController
     redirect_to :root
   end
 
+  def toggle_fade
+    @list = List.find(params[:list_id])
+    @card = @list.cards.find(params[:id]) 
+    @card.update(is_faded: !@card.is_faded)
+    redirect_to :root
+  end
+  
+  
   private
 
   def card_params
-    params.require(:card).permit(:title, :memo, :list_id)
+    params.require(:card).permit(:title, :memo, :list_id, :category_id)
   end
 
   def set_card
