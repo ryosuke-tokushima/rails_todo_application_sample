@@ -41,3 +41,31 @@
     <% end %>
   </div>
 </div>
+
+<button id="chatbotButton">Chat</button>
+
+<div class="top" id="chatWindow" style="display: none;">
+  <h3>ChatGPTに聞きたいことを入力してください。</h3>
+  <%= render 'chatbotshared/form' %>
+
+  <div class="response">
+    <h3>ChatGPTからの返信結果</h3>
+    <br>
+    <div id="chats"></div>
+    <br>
+    <br>
+  </div>
+</div>
+
+<script>
+
+document.getElementById('chatbotButton').addEventListener('click', function() {
+  var chatWindow = document.getElementById('chatWindow');
+  if (chatWindow.style.display === 'none') {
+    chatWindow.style.display = 'block';
+  } else {
+    chatWindow.style.display = 'none';
+  }
+});
+
+</script>

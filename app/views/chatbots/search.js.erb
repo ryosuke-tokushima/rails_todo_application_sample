@@ -1,0 +1,5 @@
+// "chats"のIDを持つ要素を更新
+document.getElementById('chats').innerHTML = "<%= j @chats %>";
+
+// 入力欄をクリア
+document.getElementById('query').value = '';
