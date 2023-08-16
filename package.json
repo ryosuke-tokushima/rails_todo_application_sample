@@ -1,6 +1,9 @@
 {
   "name": "rails_todo_application_sample",
   "private": true,
+  "engines": {
+    "node": "14.18.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@rails/actioncable": "^6.0.0",
@@ -10,6 +13,7 @@
     "bootstrap": "4.5.3",
     "jquery": "^3.7.0",
     "popper.js": "^1.16.1",
+    "sass": "^1.64.2",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

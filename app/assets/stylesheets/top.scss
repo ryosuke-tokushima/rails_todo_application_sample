@@ -83,3 +83,23 @@
     }
 }
   
+#chatWindow {
+    position: fixed;      /* 位置を固定する */
+    bottom: 10px;         /* 下から10pxの位置に */
+    right: 10px;          /* 右から10pxの位置に */
+    width: 300px;         /* ウィンドウの幅を300pxに */
+    height: 400px;        /* ウィンドウの高さを400pxに */
+    border: 1px solid #ccc; /* 枠線をつける */
+    background-color: #fff; /* 背景色を白に */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* 影をつける */
+    overflow: auto;      /* 内容がオーバーフローしたらスクロールさせる */
+    border-radius: 8px;  /* 角を丸くする */
+}
+
+#chatbotButton {
+    position: fixed;      /* 位置を固定する */
+    bottom: 20px;         /* 下から20pxの位置に */
+    right: 20px;          /* 右から20pxの位置に */
+    z-index: 1000;        /* 他の要素より前面に */
+}
+
